@@ -1,10 +1,11 @@
 import type { FC, ReactNode, ComponentType } from "react";
-import { motion } from "framer-motion";
-import { Cpu, ShieldCheck, Network, Layers, Sparkles, Box, Globe, Github, Lock, AlertTriangle, Cloud, Server, Database, TrendingDown, UserCheck, IdCard, Map, MapPin, Ethernet } from "lucide-react";
-
-
 import { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  Cpu, ShieldCheck, Network, Layers, Sparkles, Box, Globe, Github, UserCheck, IdCard
+} from "lucide-react";
 
+// ——— Local UI primitives ———
 type SectionProps = { id?: string; className?: string; children: ReactNode };
 const Section: FC<SectionProps> = ({ id, className = "", children }) => (
   <section id={id} className={`max-w-6xl mx-auto px-6 md:px-10 ${className}`}>{children}</section>
@@ -39,6 +40,7 @@ const Pill: FC<{ children: ReactNode }> = ({ children }) => (
   <span className="inline-flex items-center rounded-full bg-slate-900 text-white text-xs px-3 py-1 font-medium">{children}</span>
 );
 
+// ——— Subscribe form (moved out of CTA JSX) ———
 const ReserveSpot: FC = () => {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle"|"loading"|"ok"|"error">("idle");
@@ -99,8 +101,7 @@ const ReserveSpot: FC = () => {
 const App: FC = () => {
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
-    
-  {/* NAVBAR */}
+      {/* NAVBAR */}
       <header className="sticky top-0 z-30 bg-white/80 backdrop-blur border-b border-slate-200/60">
         <nav className="max-w-6xl mx-auto flex items-center justify-between px-6 md:px-10 py-4">
           <div className="flex items-center gap-2">
@@ -108,10 +109,10 @@ const App: FC = () => {
             <span className="font-semibold tracking-tight">IndependentlyUNITED</span>
           </div>
           <div className="hidden md:flex items-center gap-6 text-sm">
- 	    <a href="#broken" className="hover:text-slate-900 text-slate-600">Broken Internet</a>
+            <a href="#broken" className="hover:text-slate-900 text-slate-600">Broken Internet</a>
             <a href="#solution" className="hover:text-slate-900 text-slate-600">Solution</a>
             <a href="#box" className="hover:text-slate-900 text-slate-600">IU Box</a>
- 	    <a href="#mission" className="hover:text-slate-900 text-slate-600">Mission</a>
+            <a href="#mission" className="hover:text-slate-900 text-slate-600">Mission</a>
             <a href="#reg" className="hover:text-slate-900 text-slate-600">Regulatory Fit</a>
             <a href="#how" className="hover:text-slate-900 text-slate-600">How it works</a>
             <a href="#cta" className="hover:text-slate-900 text-slate-600">Join</a>
@@ -126,16 +127,15 @@ const App: FC = () => {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <Badge>Own your internet again</Badge>
             <h1 className="mt-4 text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
-              Own a Piece of the <span className="bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent">Sovereign</span> Internet 
+              Own a Piece of the <span className="bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent">Sovereign</span> Internet
             </h1>
             <p className="mt-5 text-lg text-slate-600 leading-relaxed">
-              IU Web is a Unix-minded, Tibet-inspired architecture for a sovereign digital life. Your <strong>IU Box</strong> is a personal server, private sanctuary, and secure gateway that connects to others by <em>choice</em>—forming a voluntary, resilient mesh. 
-		</p>
-	<p className="mt-5 text-lg text-slate-600 leading-relaxed">
-<strong>IU Web = IU Box + IU Mesh</strong> deliver cryptographically enforced sovereignty—a people-owned, offline-first network where governance is code, not contracts.
+              IU Web is a Unix-minded, Tibet-inspired architecture for a sovereign digital life. Your <strong>IU Box</strong> is a personal server, private sanctuary, and secure gateway that connects to others by <em>choice</em>—forming a voluntary, resilient mesh.
+            </p>
+            <p className="mt-5 text-lg text-slate-600 leading-relaxed">
+              <strong>IU Web = IU Box + IU Mesh</strong> deliver cryptographically enforced sovereignty—a people-owned, offline-first network where governance is code, not contracts.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-3">
-            {/* <a href="#cta" className="inline-flex items-center justify-center rounded-xl bg-slate-900 text-white px-5 py-3 font-medium shadow-sm">Join the Early Wave</a> */}
               <a href="#how" className="inline-flex items-center justify-center rounded-xl border border-slate-300 px-5 py-3 font-medium text-slate-700">See how it works</a>
             </div>
             <div className="mt-4 flex items-center gap-2 text-xs text-slate-500">
@@ -148,47 +148,34 @@ const App: FC = () => {
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}>
             <Card className="p-0 overflow-hidden">
-              <div className="relative aspect-[4/3] w-full bg-[radial-gradient(ellipse_at_center,rgba(15,23,42,0.9),rgba(2,6,23,1))] text-white grid place-items-center">
-              
-	<motion.div
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6, delay: 0.1 }}
->
-  <Card className="p-0 overflow-hidden">
-  <img
-    src="/Logo.png"  // or "/MeshSpaceBox_AI.png"
-    alt="IU Box Logo"
-    className="w-full h-auto object-contain"
-  />
-</Card>
-
-</motion.div>
-
-              </div>
+              <img
+                src="/MeshSpaceBox_AI.png"  // <-- you chose root-level file
+                alt="MeshSpace Box diagram"
+                className="w-full h-auto object-contain"
+              />
             </Card>
           </motion.div>
         </div>
       </Section>
 
- {/* Broken Internet  */}
+      {/* Broken Internet */}
       <Section id="broken" className="mt-20">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <Card>
             <h2 className="text-2xl md:text-3xl font-bold">The Internet Is Broken</h2>
             <p className="mt-3 text-slate-600 leading-relaxed">
-            Now imagine a world where your digital life is yours again.
-Where you control your identity — and your space is sovereign.
+              Now imagine a world where your digital life is yours again.
+              Where you control your identity — and your space is sovereign.
 
-Your IU Box is that space: private, secure, with off-grid AI at your side.
-You decide what to share, with whom, and for how long.
-You publish, connect, and collaborate on your own terms.
+              Your IU Box is that space: private, secure, with off-grid AI at your side.
+              You decide what to share, with whom, and for how long.
+              You publish, connect, and collaborate on your own terms.
 
-This isn’t a search engine ruled by ads.
-It’s a local, living web — proximity empowered by people.
-A human web, not a commercial one.
+              This isn’t a search engine ruled by ads.
+              It’s a local, living web — proximity empowered by people.
+              A human web, not a commercial one.
 
-Open your IU Box, and your mesh view shows trusted, real-time knowledge nearby::
+              Open your IU Box, and your mesh view shows trusted, real-time knowledge nearby::
             </p>
             <ul className="mt-4 space-y-2 text-slate-700 text-sm list-disc pl-5">
               <li>A pharmacy that’s still open</li>
@@ -217,7 +204,7 @@ Open your IU Box, and your mesh view shows trusted, real-time knowledge nearby::
                 <UserCheck className="h-5 w-5" />
                 <div className="font-semibold">From Algorithms → To Human Knowledge</div>
               </div>
-              <p className="mt-2 text-sm text-slate-600">Knowledge isn’t ads or rankings. It’s people nearby sharing trusted insight. IU Web turns data back into living, local knowledge. </p>
+              <p className="mt-2 text-sm text-slate-600">Knowledge isn’t ads or rankings. It’s people nearby sharing trusted insight. IU Web turns data back into living, local knowledge.</p>
             </Card>
             <Card>
               <div className="flex items-center gap-3">
@@ -230,75 +217,72 @@ Open your IU Box, and your mesh view shows trusted, real-time knowledge nearby::
         </div>
       </Section>
 
-
-{/* SOLUTION */}
-       <Section id="solution" className="mt-20">
-	<section className="mx-auto max-w-6xl px-6 py-14">
-        <div className="mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold">IU SOLUTION: A Unix‑Like Digital Universe</h2>
-          <p className="mt-3 text-slate-600 max-w-3xl">
-            We build like Unix—modular, composable, sovereign—and we think like Indra’s Net—interconnected jewels reflecting one another.
-            Each Box is a universe: AI sandbox, data vault, and governance core; together, they form a cooperative cosmos.
-          </p>
-        </div>
-        <div className="overflow-x-auto rounded-2xl border border-slate-800/80 bg-white/80">
-          <table className="w-full text-left text-sm">
-            <thead className="bg-white/80 text-slate-600">
-              <tr>
-                <th className="p-3">Technology</th>
-                <th className="p-3">Unix Analogy</th>
-                <th className="p-3">Buddhist Analogy</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-800/80">
-              <tr>
-                <td className="p-3">IU Box (personal node)</td>
-                <td className="p-3">Standalone Unix machine</td>
-                <td className="p-3">Jewel in Indra’s Net</td>
-              </tr>
-              <tr>
-                <td className="p-3">Mesh networking</td>
-                <td className="p-3">Pipes between processes</td>
-                <td className="p-3">Interconnection of beings</td>
-              </tr>
-              <tr>
-                <td className="p-3">Capability tokens</td>
-                <td className="p-3">File permissions / keys</td>
-                <td className="p-3">Vows / karmic contracts</td>
-              </tr>
-              <tr>
-                <td className="p-3">Quorum revocation</td>
-                <td className="p-3">sudo with group control</td>
-                <td className="p-3">Sangha consensus</td>
-              </tr>
-              <tr>
-                <td className="p-3">Sandboxed AI (TEE/WASM)</td>
-                <td className="p-3">chroot / process isolation</td>
-                <td className="p-3">Protected meditation cell</td>
-              </tr>
-              <tr>
-                <td className="p-3">Family inheritance trees</td>
-                <td className="p-3">Unix groups / ownership</td>
-                <td className="p-3">Dharma lineage (guardian→child)</td>
-              </tr>
-              <tr>
-                <td className="p-3">Distributed ledgers</td>
-                <td className="p-3">syslog audit trail</td>
-                <td className="p-3">Tamper‑evident karma log</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-                <p className="mt-3 text-xs text-slate-600">Cultural respect note: metaphors are used with reverence; the movement is non-sectarian and inclusive.</p>
-      </section>
-</Section>
-
-
+      {/* SOLUTION */}
+      <Section id="solution" className="mt-20">
+        <section className="mx-auto max-w-6xl px-6 py-14">
+          <div className="mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold">IU SOLUTION: A Unix-Like Digital Universe</h2>
+            <p className="mt-3 text-slate-600 max-w-3xl">
+              We build like Unix—modular, composable, sovereign—and we think like Indra’s Net—interconnected jewels reflecting one another.
+              Each Box is a universe: AI sandbox, data vault, and governance core; together, they form a cooperative cosmos.
+            </p>
+          </div>
+          <div className="overflow-x-auto rounded-2xl border border-slate-800/80 bg-white/80">
+            <table className="w-full text-left text-sm">
+              <thead className="bg-white/80 text-slate-600">
+                <tr>
+                  <th className="p-3">Technology</th>
+                  <th className="p-3">Unix Analogy</th>
+                  <th className="p-3">Buddhist Analogy</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-800/80">
+                <tr>
+                  <td className="p-3">IU Box (personal node)</td>
+                  <td className="p-3">Standalone Unix machine</td>
+                  <td className="p-3">Jewel in Indra’s Net</td>
+                </tr>
+                <tr>
+                  <td className="p-3">Mesh networking</td>
+                  <td className="p-3">Pipes between processes</td>
+                  <td className="p-3">Interconnection of beings</td>
+                </tr>
+                <tr>
+                  <td className="p-3">Capability tokens</td>
+                  <td className="p-3">File permissions / keys</td>
+                  <td className="p-3">Vows / karmic contracts</td>
+                </tr>
+                <tr>
+                  <td className="p-3">Quorum revocation</td>
+                  <td className="p-3">sudo with group control</td>
+                  <td className="p-3">Sangha consensus</td>
+                </tr>
+                <tr>
+                  <td className="p-3">Sandboxed AI (TEE/WASM)</td>
+                  <td className="p-3">chroot / process isolation</td>
+                  <td className="p-3">Protected meditation cell</td>
+                </tr>
+                <tr>
+                  <td className="p-3">Family inheritance trees</td>
+                  <td className="p-3">Unix groups / ownership</td>
+                  <td className="p-3">Dharma lineage (guardian→child)</td>
+                </tr>
+                <tr>
+                  <td className="p-3">Distributed ledgers</td>
+                  <td className="p-3">syslog audit trail</td>
+                  <td className="p-3">Tamper-evident karma log</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-3 text-xs text-slate-600">Cultural respect note: metaphors are used with reverence; the movement is non-sectarian and inclusive.</p>
+        </section>
+      </Section> {/* <-- close the outer Section properly */}
 
       {/* IU BOX */}
       <Section id="box" className="mt-20">
-	<h2 className="text-2xl md:text-3xl font-bold mb-8">IU Web</h2>       
- 	<div className="grid md:grid-cols-3 gap-6">
+        <h2 className="text-2xl md:text-3xl font-bold mb-8">IU Web</h2>
+        <div className="grid md:grid-cols-3 gap-6">
           <Feature icon={ShieldCheck} title="Sovereign by design">
             Your data, keys, and identity live inside your box—not in someone else’s cloud. No ads. No data brokers.
           </Feature>
@@ -311,7 +295,7 @@ Open your IU Box, and your mesh view shows trusted, real-time knowledge nearby::
         </div>
       </Section>
 
-    <Section id="box2" className="mt-20">
+      <Section id="box2" className="mt-20">
         <div className="grid md:grid-cols-3 gap-6">
           <Feature icon={Box} title="Local AI, Private by Default">
             AI runs in a sandbox (TEE/WASM). Your data never leaves without consent.
@@ -320,7 +304,7 @@ Open your IU Box, and your mesh view shows trusted, real-time knowledge nearby::
             Signed capability tokens replace ToS. No valid token → no action.
           </Feature>
           <Feature icon={IdCard} title="Community Quorum Trust">
-           No single admin. Guardians use quorum to revoke abuse and recover keys.
+            No single admin. Guardians use quorum to revoke abuse and recover keys.
           </Feature>
         </div>
       </Section>
@@ -331,9 +315,8 @@ Open your IU Box, and your mesh view shows trusted, real-time knowledge nearby::
           <Card>
             <h2 className="text-2xl md:text-3xl font-bold">IU Web Mission Statement</h2>
             <p className="mt-3 text-slate-600 leading-relaxed">
-              What if your entire digital life lived in something you owned — like a cabin, a studio, a home? And what if you could walk into it, shape it, and decide who’s welcome, just like in real life? This is what the aim is; a new way to connect, a new way to own your digital world. Not just your data, your presence, your space, your power and your right to safely connect without surveillance. The future of the internet belongs to you. Join the movement. The internet should not be owned by large corporations, it should be ours. 
-Every person should have easy and protected access to their own online space — a personal, sovereign space that securely stores your data, apps, and presence. From global mesh to offline tools, IU Web is a movement to return the internet to its people — one Box at a time.
- 
+              What if your entire digital life lived in something you owned — like a cabin, a studio, a home? And what if you could walk into it, shape it, and decide who’s welcome, just like in real life? This is what the aim is; a new way to connect, a new way to own your digital world. Not just your data, your presence, your space, your power and your right to safely connect without surveillance. The future of the internet belongs to you. Join the movement. The internet should not be owned by large corporations, it should be ours.
+              Every person should have easy and protected access to their own online space — a personal, sovereign space that securely stores your data, apps, and presence. From global mesh to offline tools, IU Web is a movement to return the internet to its people — one Box at a time.
             </p>
             <ul className="mt-4 space-y-2 text-slate-700 text-sm list-disc pl-5">
               <li>Private Digital Sanctuary (apps: Study, Media, Collections, Projects)</li>
@@ -374,22 +357,19 @@ Every person should have easy and protected access to their own online space —
         </div>
       </Section>
 
- {/* REGULATORY*/}
+      {/* REGULATORY */}
       <Section id="reg" className="mt-20">
-       <h2 className="text-2xl md:text-3xl font-bold">Regulatory Fit</h2>
-	 <div className="grid md:grid-cols-3 gap-6">
+        <h2 className="text-2xl md:text-3xl font-bold">Regulatory Fit</h2>
+        <div className="grid md:grid-cols-3 gap-6">
           <Card>
-          
             <h3 className="mt-1 text-lg font-semibold">GDPR by Design</h3>
-            <p className="mt-2 text-slate-600">Local‑first data, consent via signed tokens, real deletion.</p>
+            <p className="mt-2 text-slate-600">Local-first data, consent via signed tokens, real deletion.</p>
           </Card>
           <Card>
-         
             <h3 className="mt-1 text-lg font-semibold">Geofenced Policies</h3>
             <p className="mt-2 text-slate-600">Enable capability registry, token verification, and sandboxed apps. Everything logged, nothing leaked.</p>
           </Card>
           <Card>
-          
             <h3 className="mt-1 text-lg font-semibold">No Master Keys. No Backdoors.</h3>
             <p className="mt-2 text-slate-600">IU Box protects itself through quorum decisions, split secrets, and verifiable boot — so no one person or entity can seize control.</p>
           </Card>
@@ -413,16 +393,13 @@ Every person should have easy and protected access to their own online space —
               </ul>
             </div>
             <div>
-            <div>
-  <Card className="p-0 overflow-hidden">
-    <img
-      src="/MeshSpaceBox_AI.png"
-      alt="Mesh network diagram"
-      className="w-full h-auto object-contain"
-    />
-  </Card>
-</div>
-
+              <Card className="p-0 overflow-hidden">
+                <img
+                  src="/MeshSpaceBox_AI.png"
+                  alt="Mesh network diagram"
+                  className="w-full h-auto object-contain"
+                />
+              </Card>
             </div>
           </div>
         </Card>
@@ -457,11 +434,7 @@ Every person should have easy and protected access to their own online space —
             Our internet space should be independent, united, decentralized and under our control. We, the people should protect our digital world. We should get together and prepare a DAO democratic-coop approach to build our common digital space, we should decide on the Mesh standards, like the greek Omfalos. If you feel our internet has been overtaken by couple big players, if you feel your data and private information is being hijacked, if you find our internet is broken, I invite you to this movement. We have work to do. We also have less than 12 months to get this patented and protected from the big corporations. This is about people not power.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-
-
- <ReserveSpot />
-
-
+            <ReserveSpot />
           </div>
           <div className="mt-4 text-xs text-slate-500 flex items-center justify-center gap-2">
             <Github className="h-4 w-4" />
@@ -486,11 +459,3 @@ Every person should have easy and protected access to their own online space —
 };
 
 export default App;
-
-
-
-
-
-
-
-
