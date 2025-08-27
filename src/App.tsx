@@ -458,7 +458,7 @@ Every person should have easy and protected access to their own online space —
           <div className="mt-6 flex flex-wrap justify-center gap-3">
 
 
-
+ <ReserveSpot />
 
 
           </div>
@@ -485,6 +485,7 @@ Every person should have easy and protected access to their own online space —
 };
 
 export default App;
+
 
 
 
