@@ -101,7 +101,7 @@ const App: FC = () => {
 >
   <Card className="p-0 overflow-hidden">
     <img
-      src="/images/Logo.png"
+      src="/Logo.png"
       alt="MeshSpace Box diagram"
       className="w-full h-auto object-contain"
     />
@@ -357,7 +357,7 @@ Every person should have easy and protected access to their own online space —
             <div>
   <Card className="p-0 overflow-hidden">
     <img
-      src="/images/MeshSpaceBox_AI.png"
+      src="/MeshSpaceBox_AI.png"
       alt="Mesh network diagram"
       className="w-full h-auto object-contain"
     />
@@ -489,3 +489,4 @@ export default function ReserveSpot() {
 };
 
 export default App;
+
