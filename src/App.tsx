@@ -2,8 +2,7 @@ import type { FC, ReactNode, ComponentType } from "react";
 import { motion } from "framer-motion";
 import { Cpu, ShieldCheck, Network, Layers, Sparkles, Box, Globe, Github, Lock, AlertTriangle, Cloud, Server, Database, TrendingDown, UserCheck, IdCard, Map, MapPin, Ethernet } from "lucide-react";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+
 import { useState } from "react";
 
 type SectionProps = { id?: string; className?: string; children: ReactNode };
@@ -289,8 +288,10 @@ Open your IU Box, and your mesh view shows trusted, real-time knowledge nearby::
             </tbody>
           </table>
         </div>
-        <p className="mt-3 text-xs text-slate-600">Cultural respect note: metaphors are used with reverence; the movement is non‑sectarian and inclusive.</p>
-      </Section> </Section>
+                <p className="mt-3 text-xs text-slate-600">Cultural respect note: metaphors are used with reverence; the movement is non-sectarian and inclusive.</p>
+      </section>
+</Section>
+
 
 
       {/* IU BOX */}
@@ -546,6 +547,7 @@ export default function ReserveSpot() {
 };
 
 export default App;
+
 
 
 
