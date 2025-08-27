@@ -158,7 +158,7 @@ const App: FC = () => {
   <Card className="p-0 overflow-hidden">
     <img
       src="/Logo.png"
-      alt="MeshSpace Box diagram"
+      alt="IU Box Logo"
       className="w-full h-auto object-contain"
     />
   </Card>
@@ -318,7 +318,7 @@ Open your IU Box, and your mesh view shows trusted, real-time knowledge nearby::
           <Feature icon={ShieldCheck} title="Governance by Math">
             Signed capability tokens replace ToS. No valid token → no action.
           </Feature>
-          <Feature icon={IDCard} title="Community Quorum Trust">
+          <Feature icon={IdCard} title="Community Quorum Trust">
            No single admin. Guardians use quorum to revoke abuse and recover keys.
           </Feature>
         </div>
@@ -460,69 +460,7 @@ Every person should have easy and protected access to their own online space —
 
 
 
-export default function ReserveSpot() {
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle"|"loading"|"ok"|"error">("idle");
-  const [message, setMessage] = useState("");
 
-  async function onSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setStatus("loading");
-    setMessage("");
-    try {
-      const res = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
-      const data = await res.json();
-      if (res.ok) {
-        setStatus("ok");
-        setMessage("Thanks — check your inbox for a confirmation from us.");
-        setEmail("");
-      } else {
-        setStatus("error");
-        setMessage(data.error || "Something went wrong.");
-      }
-    } catch (err) {
-      setStatus("error");
-      setMessage("Network error. Please try again.");
-    }
-  }
-
-  return (
-    <form onSubmit={onSubmit} className="flex w-full max-w-md">
-      <input
-        type="email"
-        name="email"
-        required
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Enter your email"
-        className="flex-1 rounded-l-xl px-4 py-3 text-slate-900 border border-slate-300 focus:outline-none"
-        aria-label="Email address"
-      />
-      <button
-        type="submit"
-        disabled={status==="loading"}
-        className="inline-flex items-center justify-center rounded-r-xl bg-slate-900 text-white px-5 py-3 font-medium shadow-sm disabled:opacity-70"
-      >
-        {status==="loading" ? "Sending..." : "Reserve my spot"}
-      </button>
-      {message && (
-        <p className={`ml-3 self-center text-sm ${status==="ok" ? "text-emerald-600" : "text-rose-600"}`}>
-          {message}
-        </p>
-      )}
-    </form>
-  );
-}
-
-
-
-
-            {/* <a href="#" className="inline-flex items-center justify-center rounded-xl bg-slate-900 text-white px-5 py-3 font-medium shadow-sm">Reserve my spot</a>
-            <a href="#" className="inline-flex items-center justify-center rounded-xl border border-slate-300 px-5 py-3 font-medium text-slate-700">Read the manifesto</a>    */}
           </div>
           <div className="mt-4 text-xs text-slate-500 flex items-center justify-center gap-2">
             <Github className="h-4 w-4" />
@@ -547,6 +485,7 @@ export default function ReserveSpot() {
 };
 
 export default App;
+
 
 
 
