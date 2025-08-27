@@ -156,12 +156,13 @@ const App: FC = () => {
   transition={{ duration: 0.6, delay: 0.1 }}
 >
   <Card className="p-0 overflow-hidden">
-    <img
-      src="/Logo.png"
-      alt="IU Box Logo"
-      className="w-full h-auto object-contain"
-    />
-  </Card>
+  <img
+    src="/Logo.png"  // or "/MeshSpaceBox_AI.png"
+    alt="IU Box Logo"
+    className="w-full h-auto object-contain"
+  />
+</Card>
+
 </motion.div>
 
               </div>
@@ -485,6 +486,7 @@ Every person should have easy and protected access to their own online space —
 };
 
 export default App;
+
 
 
 
