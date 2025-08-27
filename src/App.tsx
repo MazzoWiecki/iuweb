@@ -5,6 +5,7 @@ import { Cpu, ShieldCheck, Network, Layers, Sparkles, Box, Globe, Github, Lock, 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useState } from "react";
 
 type SectionProps = { id?: string; className?: string; children: ReactNode };
 const Section: FC<SectionProps> = ({ id, className = "", children }) => (
@@ -39,6 +40,63 @@ const Feature: FC<{ icon: ComponentType<{ className?: string }>; title: string; 
 const Pill: FC<{ children: ReactNode }> = ({ children }) => (
   <span className="inline-flex items-center rounded-full bg-slate-900 text-white text-xs px-3 py-1 font-medium">{children}</span>
 );
+
+const ReserveSpot: FC = () => {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle"|"loading"|"ok"|"error">("idle");
+  const [message, setMessage] = useState("");
+
+  async function onSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setStatus("loading");
+    setMessage("");
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setStatus("ok");
+        setMessage("Thanks — check your inbox for a confirmation from us.");
+        setEmail("");
+      } else {
+        setStatus("error");
+        setMessage(data.error || "Something went wrong.");
+      }
+    } catch {
+      setStatus("error");
+      setMessage("Network error. Please try again.");
+    }
+  }
+
+  return (
+    <form onSubmit={onSubmit} className="flex w-full max-w-md">
+      <input
+        type="email"
+        required
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Enter your email"
+        className="flex-1 rounded-l-xl px-4 py-3 text-slate-900 border border-slate-300 focus:outline-none"
+        aria-label="Email address"
+      />
+      <button
+        type="submit"
+        disabled={status==="loading"}
+        className="inline-flex items-center justify-center rounded-r-xl bg-slate-900 text-white px-5 py-3 font-medium shadow-sm disabled:opacity-70"
+      >
+        {status==="loading" ? "Sending..." : "Reserve my spot"}
+      </button>
+      {message && (
+        <p className={`ml-3 self-center text-sm ${status==="ok" ? "text-emerald-600" : "text-rose-600"}`}>
+          {message}
+        </p>
+      )}
+    </form>
+  );
+};
 
 const App: FC = () => {
   return (
@@ -233,7 +291,7 @@ Open your IU Box, and your mesh view shows trusted, real-time knowledge nearby::
           </table>
         </div>
         <p className="mt-3 text-xs text-slate-600">Cultural respect note: metaphors are used with reverence; the movement is non‑sectarian and inclusive.</p>
-      </section>
+      </section> </section>
 
 
       {/* IU BOX */}
@@ -400,7 +458,7 @@ Every person should have easy and protected access to their own online space —
           <div className="mt-6 flex flex-wrap justify-center gap-3">
 
 
-import { useState } from "react";
+
 
 export default function ReserveSpot() {
   const [email, setEmail] = useState("");
@@ -489,4 +547,5 @@ export default function ReserveSpot() {
 };
 
 export default App;
+
 
