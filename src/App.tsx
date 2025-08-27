@@ -291,7 +291,7 @@ Open your IU Box, and your mesh view shows trusted, real-time knowledge nearby::
           </table>
         </div>
         <p className="mt-3 text-xs text-slate-600">Cultural respect note: metaphors are used with reverence; the movement is non‑sectarian and inclusive.</p>
-      </section> </section>
+      </Section> </Section>
 
 
       {/* IU BOX */}
@@ -547,5 +547,6 @@ export default function ReserveSpot() {
 };
 
 export default App;
+
 
 
