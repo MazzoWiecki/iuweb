@@ -1,6 +1,7 @@
 import type { FC, ReactNode, ComponentType } from "react";
 import { motion } from "framer-motion";
-import { Cpu, ShieldCheck, Network, Layers, Sparkles, Box, Globe, Github, Lock, AlertTriangle, Cloud, Server, Database, TrendingDown, UserCheck, IdCard, Map, MapPin, Ethernet } from "lucide-react";
+import { Cpu, ShieldCheck, Network, Layers, Sparkles, Box, Globe, Github, UserCheck, IdCard } from "lucide-react";
+
 
 
 import { useState } from "react";
@@ -114,6 +115,7 @@ const App: FC = () => {
  	    <a href="#mission" className="hover:text-slate-900 text-slate-600">Mission</a>
             <a href="#reg" className="hover:text-slate-900 text-slate-600">Regulatory Fit</a>
             <a href="#how" className="hover:text-slate-900 text-slate-600">How it works</a>
+	   <a href="#faq" className="hover:text-slate-900 text-slate-600">FAQ</a>
             <a href="#cta" className="hover:text-slate-900 text-slate-600">Join</a>
           </div>
           <a href="#cta" className="inline-flex items-center justify-center rounded-xl bg-slate-900 text-white px-3.5 py-2 text-sm font-medium shadow-sm">Get Early Access</a>
@@ -129,7 +131,7 @@ const App: FC = () => {
               Own a Piece of the <span className="bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent">Sovereign</span> Internet 
             </h1>
             <p className="mt-5 text-lg text-slate-600 leading-relaxed">
-              IU Web is a Unix-minded, Tibet-inspired architecture for a sovereign digital life. Your <strong>IU Box</strong> is a personal server, private sanctuary, and secure gateway that connects to others by <em>choice</em>—forming a voluntary, resilient mesh. 
+             The IU Box is your personal server and private digital sanctuary. Connect into a voluntary mesh when you choose. Own your data. Run private AI locally. Be sovereign. IU Web is a Unix-minded, Tibet-inspired architecture for a sovereign digital life. Your <strong>IU Box</strong> is a personal server, private sanctuary, and secure gateway that connects to others by <em>choice</em>—forming a voluntary, resilient mesh. 
 		</p>
 	<p className="mt-5 text-lg text-slate-600 leading-relaxed">
 <strong>IU Web = IU Box + IU Mesh</strong> deliver cryptographically enforced sovereignty—a people-owned, offline-first network where governance is code, not contracts.
@@ -175,10 +177,10 @@ const App: FC = () => {
       <Section id="broken" className="mt-20">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <Card>
-            <h2 className="text-2xl md:text-3xl font-bold">The Internet Is Broken</h2>
+            <h2 className="text-2xl md:text-3xl font-bold">The Internet is Broken — Centralized and Fragile</h2>
             <p className="mt-3 text-slate-600 leading-relaxed">
             Now imagine a world where your digital life is yours again.
-Where you control your identity — and your space is sovereign.
+Where you control your identity; and your space is sovereign.
 
 Your IU Box is that space: private, secure, with off-grid AI at your side.
 You decide what to share, with whom, and for how long.
@@ -188,7 +190,7 @@ This isn’t a search engine ruled by ads.
 It’s a local, living web — proximity empowered by people.
 A human web, not a commercial one.
 
-Open your IU Box, and your mesh view shows trusted, real-time knowledge nearby::
+Open your IU Box, and your mesh view shows trusted, real-time knowledge nearby:
             </p>
             <ul className="mt-4 space-y-2 text-slate-700 text-sm list-disc pl-5">
               <li>A pharmacy that’s still open</li>
@@ -203,14 +205,14 @@ Open your IU Box, and your mesh view shows trusted, real-time knowledge nearby::
                 <Globe className="h-5 w-5" />
                 <div className="font-semibold">From Extraction → To Ownership</div>
               </div>
-              <p className="mt-2 text-sm text-slate-600">Instead of corporations harvesting your data, your IU Box makes you the steward of your digital life. What you share is yours to grant, not theirs to take. Your data isn’t a resource to be mined. It’s your life — and you hold the keys.</p>
+              <p className="mt-2 text-sm text-slate-600">Instead of corporations harvesting your data, your IU Box makes you the steward of your digital life. What you share is yours to grant, not theirs to take. Your data isn’t a resource to be mined. It’s your life, and you hold the keys.</p>
             </Card>
             <Card>
               <div className="flex items-center gap-3">
                 <Network className="h-5 w-5" />
                 <div className="font-semibold">From Fragile → To Sovereign</div>
               </div>
-              <p className="mt-2 text-sm text-slate-600">No more fragile cloud rules and shifting terms of service. Your IU Box is a private, sovereign space — rights by design, not policies after the fact. No rented clouds, no shifting terms. A private space that answers only to you.</p>
+              <p className="mt-2 text-sm text-slate-600">No more fragile cloud rules and shifting terms of service. Your IU Box is a private, sovereign space: rights by design, not policies after the fact. No rented clouds, no shifting terms. A private space that answers only to you.</p>
             </Card>
             <Card>
               <div className="flex items-center gap-3">
@@ -235,9 +237,9 @@ Open your IU Box, and your mesh view shows trusted, real-time knowledge nearby::
        <Section id="solution" className="mt-20">
 	<section className="mx-auto max-w-6xl px-6 py-14">
         <div className="mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold">IU SOLUTION: A Unix‑Like Digital Universe</h2>
+          <h2 className="text-2xl md:text-3xl font-bold">IU SOLUTION: A Personal Server + Voluntary Mesh</h2>
           <p className="mt-3 text-slate-600 max-w-3xl">
-            We build like Unix—modular, composable, sovereign—and we think like Indra’s Net—interconnected jewels reflecting one another.
+            We build like Unix—modular, composable, sovereign and we think like Indra’s net: interconnected jewels reflecting one another.
             Each Box is a universe: AI sandbox, data vault, and governance core; together, they form a cooperative cosmos.
           </p>
         </div>
@@ -329,10 +331,10 @@ Open your IU Box, and your mesh view shows trusted, real-time knowledge nearby::
       <Section id="mission" className="mt-20">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <Card>
-            <h2 className="text-2xl md:text-3xl font-bold">IU Web Mission Statement</h2>
+            <h2 className="text-2xl md:text-3xl font-bold">Our Mission: A Sovereign, People-Owned Internet</h2>
             <p className="mt-3 text-slate-600 leading-relaxed">
               What if your entire digital life lived in something you owned — like a cabin, a studio, a home? And what if you could walk into it, shape it, and decide who’s welcome, just like in real life? This is what the aim is; a new way to connect, a new way to own your digital world. Not just your data, your presence, your space, your power and your right to safely connect without surveillance. The future of the internet belongs to you. Join the movement. The internet should not be owned by large corporations, it should be ours. 
-Every person should have easy and protected access to their own online space — a personal, sovereign space that securely stores your data, apps, and presence. From global mesh to offline tools, IU Web is a movement to return the internet to its people — one Box at a time.
+Every person should have easy and protected access to their own online space — a personal, sovereign space that securely stores your data, apps, and presence. From global internet to local mesh to offline tools, IU Web is a movement to return the internet to its people, one Box at a time.
  
             </p>
             <ul className="mt-4 space-y-2 text-slate-700 text-sm list-disc pl-5">
@@ -415,11 +417,8 @@ Every person should have easy and protected access to their own online space —
             <div>
             <div>
   <Card className="p-0 overflow-hidden">
-    <img
-      src="/MeshSpaceBox_AI.png"
-      alt="Mesh network diagram"
-      className="w-full h-auto object-contain"
-    />
+  <img src="/MeshSpaceBox_AI.png" alt="Diagram of IU Box in a voluntary mesh network" width="1200" height="800" className="w-full h-auto object-contain" />
+
   </Card>
 </div>
 
@@ -449,12 +448,40 @@ Every person should have easy and protected access to their own online space —
         </div>
       </Section>
 
+{/* FAQ  */}
+      <Section id="faq" className="mt-20">
+       <h2 className="text-2xl md:text-3xl font-bold">FAQ</h2>
+	 <div className="grid md:grid-cols-3 gap-6">
+          <Card>
+          
+            <h3 className="mt-1 text-lg font-semibold">Do I need special hardware?</h3>
+            <p className="mt-2 text-slate-600">No, it runs on laptops, mini-servers, even Raspberry Pi.</p>
+          </Card>
+          <Card>
+         
+            <h3 className="mt-1 text-lg font-semibold">Is my data private?</h3>
+            <p className="mt-2 text-slate-600">Yes, keys + data never leave your Box.</p>
+          </Card>
+          <Card>
+          
+            <h3 className="mt-1 text-lg font-semibold">Can I still use the normal internet?</h3>
+            <p className="mt-2 text-slate-600">Yes, IU Web works alongside it.</p>
+          </Card>
+        </div>
+      </Section>
+
+
       {/* CTA */}
       <Section id="cta" className="mt-24 mb-20">
         <Card className="text-center p-10">
           <h2 className="text-2xl md:text-3xl font-bold">Be an early supporter</h2>
           <p className="mt-3 text-slate-600 max-w-2xl mx-auto">
-            Our internet space should be independent, united, decentralized and under our control. We, the people should protect our digital world. We should get together and prepare a DAO democratic-coop approach to build our common digital space, we should decide on the Mesh standards, like the greek Omfalos. If you feel our internet has been overtaken by couple big players, if you feel your data and private information is being hijacked, if you find our internet is broken, I invite you to this movement. We have work to do. We also have less than 12 months to get this patented and protected from the big corporations. This is about people not power.
+         The internet should belongs to people, not platforms.
+With IndependentlyUNITED, you own your space: your data, your keys, your presence online. The IU Box is the foundation of a sovereign internet — local-first, private by design, and ready to mesh.
+
+We are building a movement and a product: real hardware and software that anyone can own, run, and trust. The community (via a DAO) will help shape standards and shared governance, while the core invention and IP remain protected so it can grow, scale, and stay independent.
+
+If you believe the internet has been overtaken by a few corporations, if you feel your privacy is under siege, join us. This is about people reclaiming control — building a sovereign digital future where freedom and sustainability go hand in hand.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
 
