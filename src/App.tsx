@@ -518,7 +518,7 @@ const App: FC = () => {
             grow, scale, and stay independent.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <ReserveSpot />
+           {/*  <ReserveSpot /> */}
           </div>
           <div className="mt-4 text-xs text-slate-500 flex items-center justify-center gap-2">
             <Github className="h-4 w-4" />
