@@ -475,13 +475,13 @@ const App: FC = () => {
         </Card>
       </Section>
 
-      {/* FOOTER (no email shown) */}
+       {/* FOOTER */}
       <footer className="border-t border-slate-200/60 py-10">
         <Section className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2 text-sm text-slate-600">
             <div className="h-7 w-7 rounded-lg bg-slate-900 text-white grid place-items-center font-bold text-xs">IU</div>
             <span>IndependentlyUNITED</span>
-            <span className="opacity-60">· IU Web</span>
+            <span className="opacity-60">· IU Web · contact: sunsawa@proton.me</span>
           </div>
           <div className="text-xs text-slate-500">© {new Date().getFullYear()} IndependentlyUNITED — All rights reserved.</div>
         </Section>
