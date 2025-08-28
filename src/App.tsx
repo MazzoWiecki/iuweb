@@ -256,7 +256,7 @@ const App: FC = () => {
 
       {/* IU BOX */}
       <Section id="box" className="mt-20">
-        <h2 className="text-2xl md:text-3xl font-bold mb-8">IU Web</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-8">IU Box</h2>
         <div className="grid md:grid-cols-3 gap-6">
           <Feature icon={ShieldCheck} title="Sovereign by design">
             Your data, keys, and identity live inside your box, not in someone else’s cloud. No ads. No data brokers.
