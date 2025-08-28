@@ -103,7 +103,7 @@ const App: FC = () => {
               sovereign digital life.
             </p>
             <p className="mt-5 text-lg text-slate-600 leading-relaxed">
-              <strong>IU Web = IU Box + IU Mesh</strong> deliver cryptographically enforced sovereignty — a people-owned,
+              <strong>IU Web = IU Box + IU Mesh</strong> deliver cryptographically enforced sovereignty; a people-owned,
               offline-first network where governance is code, not contracts.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -135,7 +135,7 @@ const App: FC = () => {
       <Section id="broken" className="mt-20 break-words">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <Card>
-            <h2 className="text-2xl md:text-3xl font-bold">The Internet is Broken — Centralized and Fragile</h2>
+            <h2 className="text-2xl md:text-3xl font-bold">The Internet is Broken: Centralized and Fragile</h2>
             <p className="mt-3 text-slate-600 leading-relaxed">
               Now imagine a world where your digital life is yours again. Where you control your identity; and your space is sovereign.
             </p>
@@ -144,7 +144,7 @@ const App: FC = () => {
               You publish, connect, and collaborate on your own terms.
             </p>
             <p className="mt-3 text-slate-600 leading-relaxed">
-              This isn’t a search engine ruled by ads. It’s a local, living web — proximity empowered by people. A human web, not a commercial one.
+              This isn’t a search engine ruled by ads. It’s a local, living web, proximity empowered by people. A human web, not a commercial one.
             </p>
             <p className="mt-3 text-slate-600 leading-relaxed">Open your IU Box, and your mesh view shows trusted, real-time knowledge nearby:</p>
             <ul className="mt-4 space-y-2 text-slate-700 text-sm list-disc pl-5">
@@ -184,7 +184,7 @@ const App: FC = () => {
                 <Network className="h-5 w-5" />
                 <div className="font-semibold">From Control → To Connection</div>
               </div>
-              <p className="mt-2 text-sm text-slate-600">Local when needed, global when invited — a network that reflects your life.</p>
+              <p className="mt-2 text-sm text-slate-600">Local when needed, global when invited; a network that reflects your life.</p>
             </Card>
           </div>
         </div>
@@ -196,7 +196,7 @@ const App: FC = () => {
           <div className="mb-8">
             <h2 className="text-2xl md:text-3xl font-bold">IU SOLUTION: A Personal Server + Voluntary Mesh</h2>
             <p className="mt-3 text-slate-600 max-w-3xl">
-              We build like Unix — modular, composable, sovereign — and we think like Indra’s net: interconnected jewels reflecting one another.
+              We build like Unix: modular, composable, sovereign and we think like Indra’s net, interconnected jewels reflecting one another.
               Each Box is a universe: AI sandbox, data vault, and governance core; together, they form a cooperative cosmos.
             </p>
           </div>
@@ -259,7 +259,7 @@ const App: FC = () => {
         <h2 className="text-2xl md:text-3xl font-bold mb-8">IU Web</h2>
         <div className="grid md:grid-cols-3 gap-6">
           <Feature icon={ShieldCheck} title="Sovereign by design">
-            Your data, keys, and identity live inside your box — not in someone else’s cloud. No ads. No data brokers.
+            Your data, keys, and identity live inside your box, not in someone else’s cloud. No ads. No data brokers.
           </Feature>
           <Feature icon={Layers} title="Built in layers">
             A disciplined Unix-style stack: capability registry, token verification, sandboxed apps, audit trails.
@@ -290,19 +290,19 @@ const App: FC = () => {
           <Card>
             <h2 className="text-2xl md:text-3xl font-bold">Our Mission: A Sovereign, People-Owned Internet</h2>
             <p className="mt-3 text-slate-600 leading-relaxed">
-              What if your entire digital life lived in something you owned — like a cabin, a studio, a home? And what if you could
+              What if your entire digital life lived in something you owned: like a cabin, a studio, a home? And what if you could
               walk into it, shape it, and decide who’s welcome, just like in real life? This is the aim: a new way to connect and
               own your digital world.
             </p>
             <p className="mt-3 text-slate-600 leading-relaxed">
-              Every person should have easy and protected access to their own online space — a personal, sovereign space that securely
+              Every person should have easy and protected access to their own online space: a personal, sovereign space that securely
               stores your data, apps, and presence. From global internet to local mesh to offline tools, IU Web is a movement to
               return the internet to its people, one Box at a time.
             </p>
             <ul className="mt-4 space-y-2 text-slate-700 text-sm list-disc pl-5">
               <li>Private Digital Sanctuary (apps: Study, Media, Collections, Projects)</li>
               <li>Token-verified access, sandboxed workloads, audit log</li>
-              <li>You become part of a new kind of internet — local, global, sovereign</li>
+              <li>You become part of a new kind of internet: local, global, sovereign</li>
             </ul>
           </Card>
 
@@ -340,7 +340,7 @@ const App: FC = () => {
                 <div className="font-semibold">Decentralized resilience</div>
               </div>
               <p className="mt-2 text-sm text-slate-600">
-                IU Boxes carry core functions — no external servers required. Linked boxes form a living web of mutual backup.
+                IU Boxes carry core functions: no external servers required. Linked boxes form a living web of mutual backup.
               </p>
             </Card>
           </div>
@@ -373,7 +373,7 @@ const App: FC = () => {
             <div>
               <h2 className="text-2xl md:text-3xl font-bold">Mesh as a choice, not a cage</h2>
               <p className="mt-3 text-slate-600 leading-relaxed">
-                IU Mesh connects boxes directly. Discovery is opt-in, services are scoped, and routes are signed — align only with
+                IU Mesh connects boxes directly. Discovery is opt-in, services are scoped, and routes are signed: align only with
                 stars you trust.
               </p>
               <ul className="mt-4 grid sm:grid-cols-2 gap-3 text-sm">
@@ -431,49 +431,49 @@ const App: FC = () => {
         <div className="grid md:grid-cols-3 gap-6 mt-6">
           <Card>
             <h3 className="mt-1 text-lg font-semibold">Do I need special hardware?</h3>
-            <p className="mt-2 text-slate-600">No — it runs on laptops, mini-servers, even Raspberry Pi.</p>
+            <p className="mt-2 text-slate-600">No. It runs on laptops, mini-servers, even Raspberry Pi.</p>
           </Card>
           <Card>
             <h3 className="mt-1 text-lg font-semibold">Is my data private?</h3>
-            <p className="mt-2 text-slate-600">Yes — keys and data never leave your Box without explicit consent.</p>
+            <p className="mt-2 text-slate-600">Yes. Keys and data never leave your Box without explicit consent.</p>
           </Card>
           <Card>
             <h3 className="mt-1 text-lg font-semibold">Can I still use the normal internet?</h3>
-            <p className="mt-2 text-slate-600">Yes — IU Web works alongside it seamlessly.</p>
+            <p className="mt-2 text-slate-600">Yes. IU Web works alongside it seamlessly.</p>
           </Card>
         </div>
       </Section>
 
-      {/* CTA (no form) */}
+           {/* CTA */}
       <Section id="cta" className="mt-24 mb-20 break-words">
         <Card className="text-center p-10">
           <h2 className="text-2xl md:text-3xl font-bold">Be an early supporter</h2>
           <p className="mt-3 text-slate-600 max-w-2xl mx-auto">
             The internet should belong to people, not platforms. With IndependentlyUNITED, you own your space: your data, your keys,
-            your presence online. The IU Box is the foundation of a sovereign internet — local-first, private by design, and ready to mesh.
+            your presence online. The IU Box is the foundation of a sovereign internet; local-first, private by design, and ready to mesh.
           </p>
           <p className="mt-3 text-slate-600 max-w-2xl mx-auto">
             We are building a movement and a product: real hardware and software that anyone can own, run, and trust. The community
             (via a DAO) will help shape standards and shared governance, while the core invention and IP remain protected so it can
             grow, scale, and stay independent.
           </p>
+
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <a
-              href="#"
-              onClick={(e) => e.preventDefault()}
-              className="inline-flex items-center justify-center rounded-xl bg-slate-900 text-white px-5 py-3 font-medium shadow-sm opacity-80 cursor-not-allowed"
-              aria-disabled="true"
-              title="Sign-ups coming soon"
+            <button
+              disabled
+              className="inline-flex items-center justify-center rounded-xl bg-slate-900 text-white px-5 py-3 font-medium shadow-sm opacity-70 cursor-not-allowed"
             >
               Sign-ups coming soon
-            </a>
+            </button>
           </div>
+
           <div className="mt-4 text-xs text-slate-500 flex items-center justify-center gap-2">
             <Github className="h-4 w-4" />
             Code-curious? Community repos coming soon.
           </div>
         </Card>
       </Section>
+
 
        {/* FOOTER */}
       <footer className="border-t border-slate-200/60 py-10">
