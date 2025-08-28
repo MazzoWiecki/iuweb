@@ -1,5 +1,4 @@
 import type { FC, ReactNode, ComponentType } from "react";
-import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   Cpu,
@@ -59,65 +58,6 @@ const Pill: FC<{ children: ReactNode }> = ({ children }) => (
     {children}
   </span>
 );
-
-/* ---------- CTA Form ---------- */
-
-const ReserveSpot: FC = () => {
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "ok" | "error">("idle");
-  const [message, setMessage] = useState("");
-
-  async function onSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setStatus("loading");
-    setMessage("");
-    try {
-      const res = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
-      const data = await res.json();
-      if (res.ok) {
-        setStatus("ok");
-        setMessage("Thanks — check your inbox for a confirmation from us.");
-        setEmail("");
-      } else {
-        setStatus("error");
-        setMessage(data.error || "Something went wrong.");
-      }
-    } catch {
-      setStatus("error");
-      setMessage("Network error. Please try again.");
-    }
-  }
-
-  return (
-    <form onSubmit={onSubmit} className="flex w-full max-w-md">
-      <input
-        type="email"
-        required
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Enter your email"
-        className="flex-1 rounded-l-xl px-4 py-3 text-slate-900 border border-slate-300 focus:outline-none"
-        aria-label="Email address"
-      />
-      <button
-        type="submit"
-        disabled={status === "loading"}
-        className="inline-flex items-center justify-center rounded-r-xl bg-slate-900 text-white px-5 py-3 font-medium shadow-sm disabled:opacity-70"
-      >
-        {status === "loading" ? "Sending..." : "Reserve my spot"}
-      </button>
-      {message && (
-        <p className={`ml-3 self-center text-sm ${status === "ok" ? "text-emerald-600" : "text-rose-600"}`}>
-          {message}
-        </p>
-      )}
-    </form>
-  );
-};
 
 /* ---------- App ---------- */
 
@@ -504,7 +444,7 @@ const App: FC = () => {
         </div>
       </Section>
 
-      {/* CTA */}
+      {/* CTA (no form) */}
       <Section id="cta" className="mt-24 mb-20 break-words">
         <Card className="text-center p-10">
           <h2 className="text-2xl md:text-3xl font-bold">Be an early supporter</h2>
@@ -518,7 +458,15 @@ const App: FC = () => {
             grow, scale, and stay independent.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-           {/*  <ReserveSpot /> */}
+            <a
+              href="#"
+              onClick={(e) => e.preventDefault()}
+              className="inline-flex items-center justify-center rounded-xl bg-slate-900 text-white px-5 py-3 font-medium shadow-sm opacity-80 cursor-not-allowed"
+              aria-disabled="true"
+              title="Sign-ups coming soon"
+            >
+              Sign-ups coming soon
+            </a>
           </div>
           <div className="mt-4 text-xs text-slate-500 flex items-center justify-center gap-2">
             <Github className="h-4 w-4" />
@@ -527,13 +475,13 @@ const App: FC = () => {
         </Card>
       </Section>
 
-      {/* FOOTER */}
+      {/* FOOTER (no email shown) */}
       <footer className="border-t border-slate-200/60 py-10">
         <Section className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2 text-sm text-slate-600">
             <div className="h-7 w-7 rounded-lg bg-slate-900 text-white grid place-items-center font-bold text-xs">IU</div>
             <span>IndependentlyUNITED</span>
-            <span className="opacity-60">· IU Web · contact: sunsawa@proton.me</span>
+            <span className="opacity-60">· IU Web</span>
           </div>
           <div className="text-xs text-slate-500">© {new Date().getFullYear()} IndependentlyUNITED — All rights reserved.</div>
         </Section>
